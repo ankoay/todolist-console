@@ -2,12 +2,7 @@ package upef;
 
 import java.util.Scanner;
 
-import upef.dao.AddTask;
-import upef.dao.DeleteTask;
-import upef.dao.DisplayTasks;
-import upef.dao.MarkTaskCompleted;
-import upef.dao.TaskManager;
-import upef.dao.TaskOperation;
+import upef.dao.*;
 
 
 
