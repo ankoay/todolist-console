@@ -1,12 +1,70 @@
 package upef;
 
 import upef.dao.TaskManager;
+import java.util.Scanner;
 
-public class MainApp{
+public class MainApp {
 
     private TaskManager taskManager;
+    private Scanner scanner;
 
-    public static void main(String[] args){
-        System.out.println("TODO LIST");
+    public MainApp() {
+        taskManager = new TaskManagerImpl();
+        scanner = new Scanner(System.in);
     }
+
+    public void start() {
+        taskManager.loadTasks(); // Charger les tâches depuis le fichier
+        TaskOperation operation = null;
+        boolean quit = false;
+        while (!quit) {
+            displayMenu();
+            operation = null;
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Lire le retour chariot après le numéro
+		
+            switch (choice) {
+                case 1:
+                    operation = new DisplayTasks(taskManager);
+                    break;
+                case 2:
+                   operation =  new AddTask(taskManager, scanner);
+                    break;
+                case 3:
+                    operation = new MarkTaskCompleted(taskManager, scanner);
+                    break;
+                case 4:
+                    operation = new DeleteTask(taskManager, scanner);
+                    break;
+                case 5:
+                    taskManager.saveTasks();
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Choix invalide. Veuillez entrer un numéro valide.");
+            }
+
+        if(operation != null) {
+		    operation.process();
+        	}
+
+        System.out.println("Merci d'avoir utilisé l'application TODO-list.");
+        }
+    }
+
+    private void displayMenu() {
+        System.out.println("\n===== Menu =====");
+        System.out.println("1. Afficher les tâches");
+        System.out.println("2. Ajouter une nouvelle tâche");
+        System.out.println("3. Marquer une tâche comme complétée");
+        System.out.println("4. Supprimer une tâche");
+        System.out.println("5. Quitter");
+        System.out.print("Choix : ");
+    }
+
+    public static void main(String[] args) {
+        MainApp app = new MainApp();
+        app.start();
+    }
+    
 }
