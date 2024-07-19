@@ -1,4 +1,4 @@
-package upef.om;
+package upef.dao;
 
 import java.util.List;
 
