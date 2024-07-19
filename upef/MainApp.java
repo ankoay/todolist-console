@@ -1,8 +1,12 @@
 package upef;
 
+import upef.dao.TaskManager;
+
 public class MainApp{
 
-        public static void main(String[] args){
-            System.out.println("TODO LIST");
-        }
+    private TaskManager taskManager;
+
+    public static void main(String[] args){
+        System.out.println("TODO LIST");
+    }
 }
