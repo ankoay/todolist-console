@@ -1,12 +1,14 @@
-```java
+package upef.dao.impl;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import upef.dao.TaskManager;
+import upef.om.Task;
 
 public class TaskManagerImpl implements TaskManager {
     private List<Task> tasks;
 
-    public TaskManager() {
+    public TaskManagerImpl() {
         tasks = new ArrayList<>();
     }
 
