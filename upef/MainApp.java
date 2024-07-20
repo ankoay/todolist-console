@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class MainApp {
 
-    private TaskManager taskManager;
+    private TaskManager taskManager = null;
     private Scanner scanner;
 
     public MainApp() {
@@ -17,11 +17,10 @@ public class MainApp {
 
     public void start() {
         //taskManager.loadTasks(); // Charger les tâches depuis le fichier
-        TaskOperation operation = null;
         boolean quit = false;
         while (!quit) {
             displayMenu();
-            operation = null;
+            TaskOperation operation = null; // Opération à effectuer
             int choice = scanner.nextInt();
             scanner.nextLine(); // Lire le retour chariot après le numéro
 		
