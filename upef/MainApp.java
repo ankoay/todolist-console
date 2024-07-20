@@ -1,6 +1,8 @@
 package upef;
 
 import upef.dao.TaskManager;
+import upef.metier.TaskOperation;
+
 import java.util.Scanner;
 
 public class MainApp {
@@ -9,12 +11,12 @@ public class MainApp {
     private Scanner scanner;
 
     public MainApp() {
-        taskManager = new TaskManagerImpl();
+       // taskManager = new TaskManagerImpl();
         scanner = new Scanner(System.in);
     }
 
     public void start() {
-        taskManager.loadTasks(); // Charger les tâches depuis le fichier
+        //taskManager.loadTasks(); // Charger les tâches depuis le fichier
         TaskOperation operation = null;
         boolean quit = false;
         while (!quit) {
@@ -25,19 +27,19 @@ public class MainApp {
 		
             switch (choice) {
                 case 1:
-                    operation = new DisplayTasks(taskManager);
+                    //operation = new DisplayTasks(taskManager);
                     break;
                 case 2:
-                   operation =  new AddTask(taskManager, scanner);
+                   //operation =  new AddTask(taskManager, scanner);
                     break;
                 case 3:
-                    operation = new MarkTaskCompleted(taskManager, scanner);
+                   // operation = new MarkTaskCompleted(taskManager, scanner);
                     break;
                 case 4:
-                    operation = new DeleteTask(taskManager, scanner);
+                    //operation = new DeleteTask(taskManager, scanner);
                     break;
                 case 5:
-                    taskManager.saveTasks();
+                    //taskManager.saveTasks();
                     quit = true;
                     break;
                 default:
@@ -46,7 +48,7 @@ public class MainApp {
 
         if(operation != null) {
 		    operation.process();
-        	}
+        }
 
         System.out.println("Merci d'avoir utilisé l'application TODO-list.");
         }
