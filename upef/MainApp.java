@@ -3,6 +3,7 @@ package upef;
 import java.util.Scanner;
 
 import upef.dao.TaskManager;
+import upef.dao.impl.TaskManagerImpl;
 import upef.metier.TaskOperation;
 import upef.metier.impl.DisplayTasks;
 
@@ -12,7 +13,7 @@ public class MainApp {
     private Scanner scanner;
 
     public MainApp() {
-       // taskManager = new TaskManagerImpl();
+       taskManager = new TaskManagerImpl();
         scanner = new Scanner(System.in);
     }
 
