@@ -7,13 +7,14 @@ import upef.dao.TaskManager;
 import upef.metier.TaskOperation;
 import upef.metier.impl.DisplayTasks;
 
+
 public class MainApp {
 
     private TaskManager taskManager = null;
     private Scanner scanner;
 
     public MainApp() {
-       // taskManager = new TaskManagerImpl();
+        taskManager = new TaskManagerImpl();
         scanner = new Scanner(System.in);
     }
 
