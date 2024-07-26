@@ -1,9 +1,11 @@
 package upef;
 
-import upef.dao.TaskManager;
-import upef.metier.TaskOperation;
 
 import java.util.Scanner;
+
+import upef.dao.TaskManager;
+import upef.metier.TaskOperation;
+import upef.metier.impl.DisplayTasks;
 
 public class MainApp {
 
@@ -26,7 +28,7 @@ public class MainApp {
 		
             switch (choice) {
                 case 1:
-                    //operation = new DisplayTasks(taskManager);
+                    operation = new DisplayTasks(taskManager);
                     break;
                 case 2:
                    //operation =  new AddTask(taskManager, scanner);
