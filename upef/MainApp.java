@@ -16,7 +16,7 @@ public class MainApp {
     public MainApp() {
         taskManager = new TaskManagerImpl();
         scanner = new Scanner(System.in);
-    }
+    } o
 
     public void start() {
         //taskManager.loadTasks(); // Charger les tâches depuis le fichier
