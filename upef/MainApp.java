@@ -3,6 +3,7 @@ package upef;
 import upef.dao.TaskManager;
 import upef.dao.impl.TaskManagerImpl;
 import upef.metier.TaskOperation;
+import upef.metier.impl.AddTask;
 import upef.metier.impl.DisplayTasks;
 
 import java.util.Scanner;
@@ -31,7 +32,7 @@ public class MainApp {
                     operation = new DisplayTasks(taskManager);
                     break;
                 case 2:
-                   //operation =  new AddTask(taskManager, scanner);
+                   operation =  new AddTask(taskManager, scanner);
                     break;
                 case 3:
                    // operation = new MarkTaskCompleted(taskManager, scanner);
