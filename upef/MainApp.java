@@ -1,11 +1,11 @@
 package upef;
 
+import java.util.Scanner;
+
 import upef.dao.TaskManager;
 import upef.dao.impl.TaskManagerImpl;
 import upef.metier.TaskOperation;
 import upef.metier.impl.DisplayTasks;
-
-import java.util.Scanner;
 
 public class MainApp {
 
