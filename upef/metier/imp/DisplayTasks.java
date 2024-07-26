@@ -2,7 +2,6 @@ package upef.metier.impl;
 
 import upef.dao.TaskManager;
 import upef.metier.TaskOperation;
-import upef.om.Task;
 
 public class DisplayTasks implements TaskOperation {
     private TaskManager taskManager;

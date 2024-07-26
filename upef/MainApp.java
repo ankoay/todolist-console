@@ -26,7 +26,7 @@ public class MainApp {
             TaskOperation operation = null; // Opération à effectuer
             int choice = scanner.nextInt();
             scanner.nextLine(); // Lire le retour chariot après le numéro
-		
+		06
             switch (choice) {
                 case 1:
                     operation = new DisplayTasks(taskManager);
